@@ -6,7 +6,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     chromium \
     ca-certificates \
     fonts-liberation \
+    libcairo2 \
     libasound2 \
+    libatspi2.0-0 \
     libatk-bridge2.0-0 \
     libatk1.0-0 \
     libcups2 \
@@ -15,6 +17,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     libgtk-3-0 \
     libnspr4 \
     libnss3 \
+    libpango-1.0-0 \
+    libpangocairo-1.0-0 \
     libx11-6 \
     libx11-xcb1 \
     libxcb1 \
@@ -22,6 +26,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     libxdamage1 \
     libxext6 \
     libxfixes3 \
+    libxkbcommon0 \
     libxrandr2 \
     libxrender1 \
     libxshmfence1 \
