@@ -1,0 +1,10 @@
+{
+  "name": "trm-bot-n8n",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Custom n8n image with Chromium + Puppeteer for browser automation.",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "puppeteer": "^23.11.1"
+  }
+}
