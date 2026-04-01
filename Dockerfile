@@ -35,6 +35,13 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     xdg-utils \
  && rm -rf /var/lib/apt/lists/*
 
+RUN set -eux; \
+    if [ -x /usr/bin/chromium ]; then exit 0; fi; \
+    if command -v chromium >/dev/null 2>&1; then ln -sf "$(command -v chromium)" /usr/bin/chromium; exit 0; fi; \
+    if command -v chromium-browser >/dev/null 2>&1; then ln -sf "$(command -v chromium-browser)" /usr/bin/chromium; exit 0; fi; \
+    ls -la /usr/bin | head -n 200; \
+    exit 1
+
 ENV PUPPETEER_SKIP_DOWNLOAD=true
 ENV PUPPETEER_EXECUTABLE_PATH=/usr/bin/chromium
 ENV NODE_PATH=/usr/local/lib/node_modules
